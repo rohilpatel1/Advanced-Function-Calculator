@@ -6,7 +6,7 @@
 
 std::string integers = "1234567890";
 std::string specialCharacters = "ei";
-std::string operation = "+-*/%^()";
+std::string operations = "+-*/%^()";
 
 class Lexer {
   private:
@@ -38,11 +38,32 @@ class Lexer {
       return true;
     }
 
-    isOperator(char character) {
+    bool isOperator(char character) {
       std::string str(1, character);
 
-      if (operators.find(str) == -1) return false;
+      if (operations.find(str) == -1) return false;
 
       return true;
+    }
+
+    bool isWhitespace(char character) {
+      if (character == ' ') return true;
+
+      return false;
+    }
+
+    bool isSpecialCharacter(char character) {
+      std::string str(1, character);
+
+      if (specialCharacters.find(str) == -1) return false;
+
+      return true;
+    }
+
+    std::vector <std::unordered_map<std::string, char> > tokenize() {
+
+      if (isInteger(character)) {
+        
+      }
     }
 };
