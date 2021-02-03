@@ -4,8 +4,9 @@
 #include <unordered_map>
 #include <vector>
 
-std::vector<char> integers = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-
+std::string integers = "1234567890";
+std::string specialCharacters = "ei";
+std::string operation = "+-*/%^"
 
 class Lexer {
   private:
@@ -24,9 +25,21 @@ class Lexer {
     }
 
     bool isInteger(char character) {
-      if 
+      std::string ch(1, character);
+      
+      if (integers.find(ch) == -1) return false;
+      
+      return true;
     }
-
+    
+    bool isSpecialCharacter(char character) {
+    	std::string ch(1, character);
+    	
+    	if(specialCharacters.find(ch)) return false;
+    	
+    	return true;
+    }
+    
   public:
     Lexer(std::string input) {
       context = input;
