@@ -2,8 +2,8 @@
 #include "src/lexer.hpp"
 
 int main() {
-  Lexer lexer("bruh");
+  Lexer lexer("bruh49");
 
-  lexer.f();
+  //lexer.f();
   return 0;
 }

@@ -4,32 +4,45 @@
 #include <unordered_map>
 #include <vector>
 
-std::vector<char> integers = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-
+std::string integers = "1234567890";
+std::string specialCharacters = "ei";
+std::string operation = "+-*/%^()";
 
 class Lexer {
   private:
   std::string context;
   int index = 0;
-  std::vector<char> contextArray;
-
-  private:
-    std::vector<char> convertToArray(std::string context) {
-      std::vector<char> arr = {};
-        for (int i = 0; i < context.size(); i++) {
-          arr.push_back(context[i]);
-        }
-
-      return arr;
-    }
-
-    bool isInteger(char character) {
-      if 
-    }
-
+  char character;
+    
   public:
     Lexer(std::string input) {
       context = input;
-      contextArray = convertToArray(input);
+      character = input[0];
+    }
+
+    char advance(int amount = 1) {
+      index += amount;
+
+      return context[index];
+    }
+
+    char peek(int amount = 1) {
+      return context[amount + index];
+    }
+
+    bool isInteger(char character) {
+      std::string str(1, character);
+
+      if (integers.find(str) == -1) return false;
+
+      return true;
+    }
+
+    isOperator(char character) {
+      std::string str(1, character);
+
+      if (operators.find(str) == -1) return false;
+
+      return true;
     }
 };
