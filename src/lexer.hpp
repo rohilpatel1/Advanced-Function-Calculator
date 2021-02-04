@@ -60,7 +60,7 @@ class Lexer {
       return true;
     }
 
-    std::vector <std::unordered_map<std::string, char> > tokenize() {
+    std::vector <std::unordered_map<std::string, std::string> > tokenize() {
 
       if (isInteger(character)) {
         
